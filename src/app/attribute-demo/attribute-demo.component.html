@@ -1,0 +1,29 @@
+
+<table width=100 border=1 solid red>
+    <tr>
+        <th>Name</th>
+        <th attr.colspan="{{colspan}}"> MobileNumbers</th>
+        <!-- <td [attr.colspan]="{{colspan}}"> HIIII</td> error -->
+        <!-- <td [attr.colspan]="colspan"> HIIII</td> -->
+    </tr>
+    <tr>
+        <td>Amit</td>
+        <td>78789900</td>
+        <td>78889045</td>
+        <td>8435555</td>
+    </tr>
+</table>
+
+<button (click)="OnSave()">Save</button>
+
+<button (click)="ClickCount()">Click</button>
+
+
+
+
+<h1>Your Click Count is  {{count}}</h1>
+
+
+InputText  <input (input)="handleInput($event)">
+
+<h2>You Entered <br>  {{value}}</h2>

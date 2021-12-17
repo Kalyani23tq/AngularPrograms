@@ -1,0 +1,28 @@
+
+<form [formGroup]='userForm'  (ngSubmit)='OnSubmit()'>
+    <div class='formGroup'>
+        <label>FullName</label>
+        <input type='text' formControlName='name' placeholder="Enter Name" ></div>
+       
+        <div class='formGroup'>
+            <label>Passowrd</label>
+        <input type='password' formControlName='pass' >
+        </div><br>
+       <label>ContactDetails:</label>
+        <div formGroupName='contactDetails'>
+            <label>LandLine</label> 
+            <input type="text" formControlName='landLine'><br>
+            <label>Mobile Number</label>
+            <input type="text" formControlName='mobile'>
+
+        </div>
+
+        <div class='formGroup'>
+           
+        <button type="submit">Register</button>
+        </div>
+        </form>
+        
+        
+        {{userForm.value |json}}
+

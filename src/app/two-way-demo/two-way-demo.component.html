@@ -2,11 +2,16 @@
 
  Name <input [(ngModel)]='MyName'><br>
 
-You Enter:{{MyName}} 
+You Enter:{{MyName}} <br>
+<br>
 
 
 <!-- Name <input [(ngModel)]='MyName'><br>
 
 NameIs<input [value]='MyName'(input)='MyName=event.target.value'/> -->
 
+<!-- <input type="text" name="name" ngModel (ngModelChange)="nameChanged($event)"> -->
+ 
+<input [ngModel]="MyName" (ngModelChange)="MyName = $event"><br><br>
 
+your name:{{MyName}}

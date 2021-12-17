@@ -1,0 +1,33 @@
+
+
+<form [formGroup]="AddmisionForm" (ngSubmit)='onSubmit()'>
+    <div class='formGroup'>
+<label>FullName</label>
+<input type='text' formControlName='fullName' placeholder="Enter Name" ></div>
+<div class='formGroup'>
+    <label>Email</label>
+<input type='email' formControlName='email' placeholder="e.g  John@gmail.com">
+</div>
+<div class='formGroup'>
+    <label>Passowrd</label>
+<input type='password' formControlName='Passowrd' >
+</div>
+<div class='formGroup'>
+    <label>Mobil</label>
+<input type="text" formControlName='Mobile' placeholder="Enter Mobile">
+</div><br>
+<div class='formGroup'>
+    <label>Country</label>
+<select formControlName='country'>
+    <option *ngFor="let cn of country" >{{cn}}</option>
+
+</select>
+</div><br>
+<div class='formGroup'>
+   
+<button type="submit">Register</button>
+</div>
+</form>
+
+
+{{AddmisionForm.value |json}}

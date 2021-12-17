@@ -1,0 +1,26 @@
+<p>directive-if works!</p>
+
+<button (click)='display=!display'>
+    {{display?'ON':'OFF'}}
+</button><br><br>
+
+Display={{display}}
+
+
+<div *ngIf='display; else elseBlock1'>Hi I am Angular</div>
+<ng-template #elseBlock1><div>Hi I am ASP.Net</div></ng-template><br><br>
+
+
+<div *ngIf='5<4 then thenBlock;else elseBK'></div>
+
+<ng-template #thenBlock><div><b>5 is Lagr than 4</b></div></ng-template>
+
+<ng-template #elseBK><div><b>4 is Larg than 5</b></div></ng-template><br><br>
+
+
+Enter Number:<input type="text" [(ngModel)]='num'>
+
+<div *ngIf='num>0 then thenBlock1;else elseBlock2'></div>
+<ng-template #thenBlock1><div><b>Number is Positive</b></div></ng-template>
+
+<ng-template #elseBlock2><div><b>Number is negative</b></div></ng-template>

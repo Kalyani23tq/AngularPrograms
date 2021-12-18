@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-group',
@@ -12,7 +12,8 @@ export class ReactiveFormGroupComponent implements OnInit {
   userForm:FormGroup;
   constructor() {
     this.userForm=new FormGroup({
-    name:new FormControl(''),
+    name:new FormControl('',[Validators.required,Validators.minLength(4)]),
+    email:new FormControl('',[Validators.required,Validators.pattern("[a-zA-Z0-9]+@[a-z]+[.][a-z]+")]),
     pass:new FormControl(''),
     contactDetails:new FormGroup({
       landLine:new FormControl(''),

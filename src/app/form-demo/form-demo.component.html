@@ -22,12 +22,19 @@
 
   <div class="form-group">    
 <label>Name</label>
-<input type='text' class="form-control" #nm='ngModel' ngModel name="NAme" placeholder="Enter your Name" ><br>
+<input type='text' class="form-control" #nm='ngModel' ngModel name="NAme" required minlength="4" maxlength="20" placeholder="Enter your Name" ><br>
+<div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+<div *ngIf="nm.errors?.['required']">Enter FullName</div>
+<div *ngIf="nm.errors?.['minlength']">Name should be minimum 4 letters </div>
+</div>
 </div>  
 <div class="form-group">  
     <label>Email</label>
-    <input type='email' class="form-control" name='Email' ngModel placeholder="Ex. Merryscotch@yahho.com"><br>
-    
+    <input type='email' class="form-control" name='Email'  #Email='ngModel'  ngModel required pattern="[a-zA-Z0-9]+@[a-z]+[.][a-z]+"placeholder="Ex. Merryscotch@yahho.com"><br>
+   <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">
+        <div *ngIf="Email.errors?.['required']">Enter Email</div>
+        <div *ngIf="Email.errors?.['pattern']">Enter email in valid pattern</div>
+        </div>
     </div>
 <div class="form-group">  
     <label>Password</label>
@@ -48,7 +55,11 @@
 
 <div class="form-group">  
 <label>ZipCode</label>
-<input type="text"  class="form-control" name='zipcode' ngModel><br>
+<input type="text"  class="form-control" name='zipcode'  #zipcode='ngModel' ngModel required pattern="[0-9]{6}"><br>
+<div class="alert alert-danger" *ngIf="zipcode.invalid && (zipcode?.touched ||zipcode?.dirty)">
+    <div *ngIf="zipcode.errors?.['required']">Enter Zip</div>
+    <div *ngIf="zipcode.errors?.['pattern']">Enter Correct ZipCode</div>
+    </div>
 </div>
 <div class="form-group">
     <label>Gender</label>
@@ -80,7 +91,7 @@
 </div><br>
 <br>
 <div class="form-group">  
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 
 
 <button class='btn btn-outline-secondary' type='reset'>Reset</button>

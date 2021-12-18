@@ -1,13 +1,26 @@
 
-<form [formGroup]='userForm'  (ngSubmit)='OnSubmit()'>
+<form [formGroup]='userForm'>
     <div class='formGroup'>
         <label>FullName</label>
-        <input type='text' formControlName='name' placeholder="Enter Name" ></div>
-       
+        <input type='text' formControlName='name' placeholder="Enter Name" >
+    <div class ='formGroup' *ngIf="userForm.controls['name'].invalid && userForm.controls['name'].touched" ></div>
+    <div class='text-danger' *ngIf="userForm.controls['name'].errors?.['required']">Please Enter Name</div>
+    <div class='text-danger' *ngIf="userForm.controls['name'].errors?.['minlength']">Name should be min 4 letters</div>
+    </div>
+        <div class='formGroup'>
+            <label>Email</label>
+        <input type='email' formControlName='email' >
+        <div class ='formGroup' *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched" ></div>
+        <div class='text-danger' *ngIf="userForm.controls['email'].errors?.['required']">Please Enter Email</div>
+    <div class ="text-danger" *ngIf="userForm.controls['email'].errors?.['pattern']">Pleas Provide Valid Email e.g Jone@yahoo.com</div>   
+    </div><br>
+
         <div class='formGroup'>
             <label>Passowrd</label>
         <input type='password' formControlName='pass' >
         </div><br>
+
+
        <label>ContactDetails:</label>
         <div formGroupName='contactDetails'>
             <label>LandLine</label> 
@@ -19,7 +32,7 @@
 
         <div class='formGroup'>
            
-        <button type="submit">Register</button>
+        <button class="btn btn-primary" type="submit" (click)='OnSubmit()' [disabled]="userForm.invalid">Register</button>
         </div>
         </form>
         

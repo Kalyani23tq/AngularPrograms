@@ -1,0 +1,25 @@
+
+
+
+<button type="submit" (click)="getProductDetails()">ProductList</button>
+
+<!-- 
+<ul *ngFor='let pd of MyProduct'>
+    <li>{{pd.productID}}</li>
+    <li>{{pd.name}}</li>
+    <li>{{pd.price}}</li>
+</ul> -->
+<table class='table'>
+    <tr>
+        <th>Product_ID</th>
+        <th>Product_Name</th>
+        <th>Product_Price</th>
+    </tr>
+    <tr *ngFor='let product of MyProduct'>
+        <td>{{product.productID}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+</table>
+
+

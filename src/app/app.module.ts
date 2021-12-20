@@ -20,6 +20,12 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { FormDemoComponent } from './form-demo/form-demo.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactiveFormGroupComponent } from './reactive-form-group/reactive-form-group.component';
+import { CubeServDemoComponent } from './cube-serv-demo/cube-serv-demo.component';
+import { GlobleservDemoComponent } from './globleserv-demo/globleserv-demo.component';
+import { ServiceGlobleDemoService } from './service-globle-demo.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { ServEmployeeService } from './serv-employee.service';
+import { CrudOperationComponent } from './crud-operation/crud-operation.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +45,18 @@ import { ReactiveFormGroupComponent } from './reactive-form-group/reactive-form-
     LifeCycleComponent,
     FormDemoComponent,
     ReactiveComponent,
-    ReactiveFormGroupComponent
+    ReactiveFormGroupComponent,
+    CubeServDemoComponent,
+    GlobleservDemoComponent,
+    EmployeeComponent,
+    CrudOperationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ServiceGlobleDemoService,ServEmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

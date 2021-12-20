@@ -18,7 +18,17 @@
         <div class='formGroup'>
             <label>Passowrd</label>
         <input type='password' formControlName='pass' >
+        <div class ='formGroup' *ngIf="userForm.controls['pass'].invalid && userForm.controls['pass'].touched" ></div>
+    <div class='text-danger' *ngIf="userForm.controls['pass'].errors?.['required']">Please Enter Name</div>
+    <div class='text-danger' *ngIf="userForm.controls['pass'].errors?.['minlength']">Name should be min 8 letters</div>
         </div><br>
+        <div class='formGroup'>
+        <label>confirmPass</label>
+    <input type='password' formControlName='confirmPass' >
+    <div class ='formGroup' *ngIf="userForm.controls['confirmPass'].invalid && userForm.controls['confirmPass'].touched" ></div>
+<div class='text-danger' *ngIf="userForm.controls['confirmPass'].errors?.['required']">Please Enter Name</div>
+<div class='text-danger' *ngIf="userForm.controls['confirmPass'].errors?.['minlength']">Name should be min 8 letters</div>
+    </div><br>
 
 
        <label>ContactDetails:</label>

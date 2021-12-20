@@ -1,0 +1,14 @@
+<table class="table">
+<tr>
+    <th>Employee_ID</th>
+    <th>Employee_Name</th>
+    <th>Employee_Salary</th>
+    <th>Gender</th>
+</tr>
+<tr *ngFor='let emp of empInfo'>
+    <td>{{emp.id |uppercase}}</td>
+    <td>{{emp.name | titlecase}}</td>
+    <td>{{emp.salary|currency:'INR':true}}</td>
+    <td>{{emp.gender|uppercase}}</td>
+</tr>
+</table>

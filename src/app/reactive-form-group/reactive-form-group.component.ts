@@ -14,7 +14,12 @@ export class ReactiveFormGroupComponent implements OnInit {
     this.userForm=new FormGroup({
     name:new FormControl('',[Validators.required,Validators.minLength(4)]),
     email:new FormControl('',[Validators.required,Validators.pattern("[a-zA-Z0-9]+@[a-z]+[.][a-z]+")]),
-    pass:new FormControl(''),
+    pass:new FormControl('',[Validators.required,Validators.minLength(8)]),
+    confirmPass:new FormControl('',[Validators.required]),
+    
+      
+    
+
     contactDetails:new FormGroup({
       landLine:new FormControl(''),
       mobile:new FormControl('')
@@ -31,4 +36,5 @@ export class ReactiveFormGroupComponent implements OnInit {
   {
     console.log(this.userForm.value)
   }
+ 
 }

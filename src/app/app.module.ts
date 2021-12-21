@@ -26,7 +26,11 @@ import { ServiceGlobleDemoService } from './service-globle-demo.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { ServEmployeeService } from './serv-employee.service';
 import { CrudOperationComponent } from './crud-operation/crud-operation.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MyHttpClientComponent } from './my-http-client/my-http-client.component';
+import { MyHttpComponent } from './my-http/my-http.component';
+import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
+import { MyJSONDataComponent } from './my-jsondata/my-jsondata.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,12 +53,16 @@ import { CrudOperationComponent } from './crud-operation/crud-operation.componen
     CubeServDemoComponent,
     GlobleservDemoComponent,
     EmployeeComponent,
-    CrudOperationComponent
+    CrudOperationComponent,
+    MyHttpClientComponent,
+    MyHttpComponent,
+    HttpClientDemoComponent,
+    MyJSONDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [ServiceGlobleDemoService,ServEmployeeService],
   bootstrap: [AppComponent]
